@@ -1,0 +1,246 @@
+{"res": "1", "data": {
+    "item": [
+        {
+            "id": "402881183f7aa068013f7aceaa9c006b",
+            "itype": "0",
+            "max": 5,
+            "min": 1,
+            "name": "������2",
+            "optionNum": "",
+            "param1": "",
+            "param2": ""
+        },
+        {
+            "id": "402881183f7aa068013f7acea6480069",
+            "itype": "0",
+            "max": 10,
+            "min": 1,
+            "name": "������",
+            "optionNum": "",
+            "param1": "",
+            "param2": ""
+        }
+    ],
+    "itemWordList": [
+        {
+            "itemId": "f4d7dba2e26847ae8e4f12936b1eb579",
+            "itype": "4",
+            "name": "��������",
+            "optionNum": "",
+            "wordAnswerList": [
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "����1",
+                    "id": "402881183f7aa068013f7aceb1fd007c",
+                    "number": "0"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "����2",
+                    "id": "402881183f7aa068013f7aceb22c007d",
+                    "number": "1"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "����3",
+                    "id": "402881183f7aa068013f7aceb26a007e",
+                    "number": "2"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "����4",
+                    "id": "402881183f7aa068013f7aceb2a9007f",
+                    "number": "3"
+                }
+            ]
+        },
+        {
+            "itemId": "5ec9cb9358394964a5ddbb2131b9f61a",
+            "itype": "1",
+            "name": "��ѡ��2",
+            "optionNum": "",
+            "wordAnswerList": [
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ10",
+                    "id": "402881183f7aa068013f7aceaea30070",
+                    "number": "0"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ9",
+                    "id": "402881183f7aa068013f7aceaed20071",
+                    "number": "1"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ8",
+                    "id": "402881183f7aa068013f7aceaef10072",
+                    "number": "2"
+                }
+            ]
+        },
+        {
+            "itemId": "96ed8479715f40f4bef1889cf8719b9a",
+            "itype": "3",
+            "name": "�����1",
+            "optionNum": "",
+            "wordAnswerList": [
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "",
+                    "id": "402881183f7aa068013f7aceb1ce007a",
+                    "number": ""
+                }
+            ]
+        },
+        {
+            "itemId": "20598859c7eb45a5967b61ea5e81d15d",
+            "itype": "3",
+            "name": "�����2",
+            "optionNum": "",
+            "wordAnswerList": [
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "",
+                    "id": "402881183f7aa068013f7aceb1ed007b",
+                    "number": ""
+                }
+            ]
+        },
+        {
+            "itemId": "aa26519f63934b9db0754326ee0c8f1d",
+            "itype": "2",
+            "name": "��ѡ��2",
+            "optionNum": "",
+            "wordAnswerList": [
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ10",
+                    "id": "402881183f7aa068013f7aceb0290077",
+                    "number": "0"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ9",
+                    "id": "402881183f7aa068013f7aceb0480078",
+                    "number": "1"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ8",
+                    "id": "402881183f7aa068013f7aceb0670079",
+                    "number": "2"
+                }
+            ]
+        },
+        {
+            "itemId": "bedb64441cc947e8a56915ccb510f2d6",
+            "itype": "2",
+            "name": "��ѡ��1",
+            "optionNum": "1",
+            "wordAnswerList": [
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ1",
+                    "id": "402881183f7aa068013f7aceadf6006d",
+                    "number": "0"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ2",
+                    "id": "402881183f7aa068013f7aceae15006e",
+                    "number": "1"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ2",
+                    "id": "402881183f7aa068013f7aceae73006f",
+                    "number": "2"
+                }
+            ]
+        },
+        {
+            "itemId": "3a44a540b0c54900ba6356dab77641a6",
+            "itype": "2",
+            "name": "��ѡ��1",
+            "optionNum": "2",
+            "wordAnswerList": [
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ1",
+                    "id": "402881183f7aa068013f7aceaf3f0073",
+                    "number": "0"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ2",
+                    "id": "402881183f7aa068013f7aceaf4e0074",
+                    "number": "1"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ3",
+                    "id": "402881183f7aa068013f7aceaf7d0075",
+                    "number": "2"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��ѡ4",
+                    "id": "402881183f7aa068013f7aceafdb0076",
+                    "number": "3"
+                }
+            ]
+        },
+        {
+            "itemId": "e9f2b664fa0746e79272e92da703109d",
+            "itype": "4",
+            "name": "��������2",
+            "optionNum": "",
+            "wordAnswerList": [
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "�ķḻ��",
+                    "id": "402881183f7aa068013f7aceb2d80080",
+                    "number": "0"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "������",
+                    "id": "402881183f7aa068013f7aceb2f70081",
+                    "number": "1"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "��",
+                    "id": "402881183f7aa068013f7aceb3170082",
+                    "number": "2"
+                },
+                {
+                    "CREATEDATE": "2013-06-25 18:08:47",
+                    "answer": "�෢��",
+                    "id": "402881183f7aa068013f7aceb3360083",
+                    "number": "3"
+                }
+            ]
+        }
+    ],
+    "map": [],
+    "notice": "",
+    "qid": {
+        "createdate": "2013-06-25 18:08:44",
+        "delflag": "0",
+        "departcode": "402881ca3f73c541013f73dcb8520003",
+        "departname": "�з�2��",
+        "donum": 0,
+        "dotime": "30",
+        "flag": "1",
+        "id": "402881183f7aa068013f7ace9a160068",
+        "name": "�ۺ���",
+        "param1": "",
+        "param2": "",
+        "remark": "�ɺÿɺý���",
+        "type": "2"
+    },
+    "uid": []
+}}
