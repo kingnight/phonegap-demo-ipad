@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head><title>中国人寿测评系统</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/kendo.mobile.ios.min.css"/>
+    <link rel="stylesheet" href="css/kendo.mobile.exported.css"/>
+<body>
+<div data-role="view" id="loginpage" data-layout="loginLayout" data-show="SystemClear">
+    <div class="wrapper">
+        <div id="apploader"><img src="images/loader.gif"></div>
+        <div id="appinfo">欢迎使用中国人寿测评系统!</div>
+        <div id="appGuid"></div>
+        <div id="loginpageShow" class="debuginfo">------</div>
+        <div class="BigBtn">
+        <center><a data-click="gotoListPage" data-role="button" id="appBtn">开始测评</a></center>
+        </div>
+    </div>
+</div>
+<div data-role="layout" data-id="loginLayout">
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">中国人寿测评系统</span>
+            <a data-role="button" id="configBtn" data-align="right" data-click="openConfigDialog">设置</a>
+        </div>
+    </div>
+</div>
+<div data-role="view" id="listpage" data-layout="listLayout" data-show="listpageInit">
+    <div class="wrapper">
+        <div class="headwrapper">
+            <div class="appheader">本次测评包含以下问卷</div>
+        </div>
+        <!--div id="queCount"></div-->
+        <div data-role="scroller" id="listdetail"></div>
+        <div id="listpageShow" class="debuginfo">------</div>
+        <div class="BigBtn">
+            <a data-click="gotoInfoPage" data-role="button" id="listBtn">进入测评</a>
+        </div>
+    </div>
+</div>
+<div data-role="layout" data-id="listLayout">
+    <div data-role="header">
+        <div data-role="navbar"><span data-role="view-title">中国人寿测评系统</span></div>
+    </div>
+</div>
+<div data-role="view" id="infopage" data-show="infoInit" data-layout="infoLayout">
+    <div class="wrapper">
+        <div class="headwrapper">
+            <div class="appheader">使用须知</div>
+        </div>
+        <div data-role="scroller" id="infodetail"></div>
+        <div id="infopageShow" class="debuginfo">------</div>
+        <div class="BigBtn">
+            <a data-click="infoStart" data-role="button" id="infoBtn">进入测评（<span
+                    id="countdownNO">30</span>秒）</a>
+        </div>
+    </div>
+</div>
+<div data-role="layout" data-id="infoLayout">
+    <div data-role="header">
+        <div data-role="navbar"><span data-role="view-title">中国人寿测评系统</span></div>
+    </div>
+</div>
+
+<!--左侧列表人员详情模版-->
+<script type="text/x-kendo-template" id="uidTemplate"># for (var i = 0; i < data.length; i++) { #
+    <li class="userlist" val=${i}>
+        <div class="flex-container">
+            <div class="username" style="width:90px;">#:data[i].name#</div>
+            <div style="width:150px;"><span class="userorg">#:data[i].orgName#</span><br/>
+                <span class="userpos">#:data[i].position#</span></div>
+            <div class="km-icon km-cancel uidicon"></div>
+        </div>
+    </li>
+    # } #
+</script>
+<!--左侧列表部门模版-->
+<script type="text/x-kendo-template" id="uidTemplateDepart">
+    <li>
+        <div class="depart" >#:data.departname#</div>
+    </li>
+</script>
+<!--问卷标题模版-->
+<script type="text/x-kendo-template" id="qidTemplate">
+    <li>测评ID：<span id="qid_id">#=data.id#</span></li>
+    <li>测评内容：<span id="qid_name">#=data.name#</span></li>
+    <li>备注：<span id="qid_remark">#=data.remark#</span></li>
+</script>
+<!--分数1-10分模版-->
+<script type="text/x-kendo-template" id="itemTemplate"># for (var i = 0; i < data.length; i++) { #
+<li class="km-group-container item">
+    <div class="km-group-title">
+        <div class="km-text itemTitle">#=data[i].name#</div>
+    </div>
+    <ul class="km-list">
+        # var data_id=data[i].id; #
+        <li class="btngroup" id=${data_id}>
+            # var high=parseInt(data[i].max),low=parseInt(data[i].min);#
+            # for (var j= high; j >= low; j--) { #
+            # var data_value=j;#
+            <a data-role="button" class="scorebtn km-button" value=${data_value}>${j}分</a>
+            #}#
+        </li>
+    </ul>
+</li>
+#}#
+</script>
+<!--四项选择题-->
+<script type="text/x-kendo-template" id="mapTemplate"># for (var i = 0; i < data.length; i++) { #
+    <li class="km-group-container map">
+        <div class="km-group-title">
+            <div class="km-text itemTitle">#=data[i].name#</div>
+        </div>
+        <ul class="km-list">
+            #var id=data[i].id,d1=1,d2=2,d3=3,d4=4;#
+            <li class="btngroup" id=${id}>
+                <a data-role="button" class="scorebtn km-button" value=${d1}>#=data[i].d1#</a>
+                <a data-role="button" class="scorebtn km-button" value=${d2}>#=data[i].d2#</a>
+                <a data-role="button" class="scorebtn km-button" value=${d3}>#=data[i].d3#</a>
+                <a data-role="button" class="scorebtn km-button" value=${d4}>#=data[i].d4#</a>
+            </li>
+        </ul>
+    </li>
+    #}#
+</script>
+<!--限制选择＋文字输入-->
+<script type="text/x-kendo-template" id="wordsTemplate">
+    # for (var i = 0; i < data.length; i++) { #
+    #var itemId=data[i].itemId;var itype=data[i].itype;var optionNum=data[i].optionNum;#
+    <li class="km-group-container words" itype=${itype} id=${itemId} cbl=${optionNum} >
+    <div class="km-group-title">
+        <div class="km-text itemTitle">#=data[i].name#</div>
+    </div> 
+    <ul class="km-list" cbl=${optionNum}>
+        #for(var j=0;j<data[i].wordAnswerList.length; j++){#
+            #var idval=data[i].wordAnswerList[j].id;#
+            #if(data[i].itype==1){#
+        <li><label class="km-listview-label"><input type="radio" name=${itemId} class="km-widget km-icon km-check" id=${idval} />#=data[i].wordAnswerList[j].answer#</label></li>
+            #}#
+            #if(data[i].itype==2 || data[i].itype==4 || data[i].itype==5 ){#
+        <li><label class="km-listview-label"><input type="checkbox" class="km-widget km-icon km-check jcheck" id=${idval} /> #=data[i].wordAnswerList[j].answer# </label></li>
+            #}#
+        #}#
+        #if(data[i].itype==3 || data[i].itype==4){#
+        <li><label class="km-listview-label"><textarea id=${idval} onfocus="clearArea(this);" style="width:100%;height: 100px;" maxlength="150">请输入答案</textarea></label></li>
+        #}#
+    </ul>
+    </li>
+    #}#
+</script>
+
+<div data-role="splitview" id="evaluation" data-show="evalInit">
+    <div data-role="pane" id="side-pane" data-layout="side-default">
+        <div data-role="view" data-title="测评对象" id="testobject">
+            <ul data-role="listview" id="uidListView" data-click="uidClickItem"></ul>
+        </div>
+        <div data-role="layout" data-id="side-default">
+            <div data-role="header">
+                <div data-role="navbar"><span data-role="view-title"></span></div>
+            </div>
+        </div>
+    </div>
+    <div data-role="pane" id="main-pane" data-layout="main-default">
+        <div data-role="view" id="testpage" data-title="测评内容">
+            <ul data-role="listview" id="qidListView"></ul>
+            <ul data-role="listview" data-type="group" id="itemListView" data-click="listViewClick" data-style="inset"></ul>
+            <center style="margin: 50px auto;"><a data-role="button" id="submitBtn" data-click="submitCurrentPage">下一个</a></center>
+        </div>
+        <div data-role="layout" data-id="main-default">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title"></span>
+                    <a data-role="button" id="headerBtn" data-click="submitAllPage" data-align="right">提交问卷</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-role="modalview" id="configDialog" style="width: 40%; height: 18em;">
+    <div data-role="header" class="navbarStyle">
+        <!--<div data-role="navbar">服务器设置-->
+        <!--<a data-role="button" id="cancelBtn" data-align="right" data-click="closeConfigDialog">取消</a>-->
+        <!--</div>-->
+        <div data-role="navbar">
+        <span data-role="view-title">服务器设置</span>
+        <a data-role="button" id="cancelBtn" data-align="right" data-click="closeConfigDialog">取消</a>
+        </div>
+    </div>
+    <div style="margin-left:20px; text-align: left;font-size: 1.5em; padding-top:0.5em;">
+        <label>IP设置
+            <input id="ipStr" type="url" value="192.168.0.0" style="width:50%;font-size: 1em;"/>
+        </label>
+        </br>
+        <label>端口设置<input id="port" type="number" value="8080" min="1" max="9999" style="font-size: 1em;" /></label>
+        </br>
+        <label>网络超时(毫秒)
+            <input id="timeout" type="number" value="8000" min="1" max="9999"style="font-size: 1em;" />
+        </label>
+    </div>
+    <div style="margin:0 auto; text-align: center;padding-top:0.5em;font-size: 1.3em;">
+        <a data-click="setConfig" type="button" data-role="button">确定</a>
+    </div>
+</div>
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="libs/jquery.min.js"></script>
+<script src="libs/kendo.mobile.min.js"></script>
+<!--script src="libs/kendo.renshou.min.js"></script-->
+<script src="js/app.js"></script>
+</body>
+</html>
